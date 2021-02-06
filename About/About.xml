@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Party Your F****** Ass Off</name>
+	<author>Captain Muscles (Nathan Harbour)</author>
+	<packageId>CaptainMuscles.PartyYourAssOff</packageId>
+	<url>https://github.com/CaptainMuscles/CM_Party_Your_Ass_Off</url>
+	<supportedVersions>
+		<li>1.2</li>
+	</supportedVersions>
+	<description>It's time to party! But wait, your colonists didn't get the memo...  This mod fixes that. Select a colonist and then right-click a party spot to let everyone know its time.</description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+	</modDependencies>
+
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>brrainz.harmony</li>
+	</loadAfter>
+</ModMetaData>
