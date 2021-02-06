@@ -26,7 +26,6 @@ namespace CM_Party_Your_Ass_Off
                 foreach (Thing thing in clickedCell.GetThingList(pawn.Map))
                 {
                     GatheringDef gatheringDef = GatheringDefOf.Party;
-                    //foreach(GatheringDef gatheringDef in DefDatabase<GatheringDef>.AllDefsListForReading)
                     {
                         if (gatheringDef.gatherSpotDefs.Contains(thing.def))
                         {
@@ -41,7 +40,17 @@ namespace CM_Party_Your_Ass_Off
                             {
                                 opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(optionString, delegate
                                 {
-                                    TryStartParty(gatheringDef, pawn, thing.Position);
+                                    if (TryStartParty(gatheringDef, pawn, thing.Position))
+                                    {
+                                        // Let the VoluntarilyJoinableLordsStarter for this map know we are throwing a party so we don't get a random party directly after
+                                        Map map = pawn.Map;
+                                        if (map.lordsStarter != null)
+                                        {
+                                            FieldInfo lastLordStartTickField = typeof(VoluntarilyJoinableLordsStarter).GetField("lastLordStartTick", BindingFlags.NonPublic | BindingFlags.Instance);
+                                            if (lastLordStartTickField != null)
+                                                lastLordStartTickField.SetValue(map.lordsStarter, Find.TickManager.TicksGame);
+                                        }
+                                    }
                                 }, MenuOptionPriority.High), pawn, thing));
                             }
                         }
