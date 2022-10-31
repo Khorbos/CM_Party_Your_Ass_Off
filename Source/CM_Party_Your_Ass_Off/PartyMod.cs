@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace CM_Party_Your_Ass_Off
+namespace KB_Party_Your_Ass_Off
 {
     public class PartyMod : Mod
     {

@@ -9,7 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace CM_Party_Your_Ass_Off
+namespace KB_Party_Your_Ass_Off
 {
     [StaticConstructorOnStartup]
     public static class FloatMenuMakerMap_Patches
